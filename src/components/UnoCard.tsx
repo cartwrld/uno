@@ -98,30 +98,56 @@ export class UnoCard extends Component<UnoCardProps, UnoCardState> {
                                       bg={'ghostwhite'} border={`10px solid ${c}`} borderRadius={'50%'}
                                       transform={'rotate(30deg)'}
                                       boxShadow={'5px 5px 8px rgba(0,0,0,0.1), -5px -5px 8px rgba(0,0,0,0.1),inset 5px 5px 10px rgba(0,0,0,0.1), inset -5px -5px 10px rgba(0,0,0,0.1)'}>
+                                    {
+                                        num === 9
+                                            ? <Flex flexDir={'column'}>
+                                                <Center transform={`rotate(-30deg)`} fontSize={'9.0em'}
+                                                        fontWeight={'bold'} fontStyle={'italic'}
+                                                        pt={'0px'} pe={'0px'}
+                                                        sx={{WebkitTextStroke: `3px black`, color: `${c}`}}
+                                                        textShadow={'4px 3px 0 black'}>
+                                                    <Flex flexDir={'column'} h={'fit-content'} mr={'10px'} mb={'15px'}>
+                                                        <Center mb={'0'} lineHeight={0}>{num}</Center>
+                                                        <Center bg={'white'} lineHeight={0} fontSize={'9rem'}
+                                                                fontWeight={'bold'} fontStyle={'italic'}
+                                                                sx={{WebkitTextStroke: `3px black`, color: `${c}`}} p={0}>_</Center>
+                                                    </Flex>
+                                                </Center>
+                                            </Flex>
+                                            :
+                                            <Center transform={'rotate(-30deg)'} fontSize={'9em'} fontWeight={'bold'}
+                                                     fontStyle={'italic'} textShadow={'7px 3px 0 black'} mr={'20px'}
+                                                     sx={{
+                                                         WebkitTextStroke: `3px black`,
+                                                         color: `${c}`
+                                                     }} >
+                                                {num}
+                                            </Center>
+                                    }
 
-                                    <Center transform={'rotate(-30deg)'} fontSize={'9em'} fontWeight={'bold'}
-                                            fontStyle={'italic'}
-                                            sx={{
-                                                WebkitTextStroke: `3px black`,
-                                                color: `${c}`
-
-                                            }} textShadow={'7px 3px 0 black'} pr={3}>
-                                        {num}
-                                    </Center>
                                 </Flex>
                                 {this.CardNumber(num, 0)}
                             </>
-                            : <Center border={`10px solid white`} transform={'rotate(30deg)' } w={'175px'} h={'350px'}  borderRadius={'50%'}>
+                            : <Center border={`10px solid white`} transform={'rotate(30deg)'} w={'175px'} h={'350px'}
+                                      borderRadius={'50%'}>
                                 <Flex justifyContent={'center'} alignItems={'center'} flexWrap={'wrap'}
-                                    w={'175px'} h={'350px'} bg={'ghostwhite'} borderRadius={'50%'}
+                                      w={'175px'} h={'350px'} bg={'ghostwhite'} borderRadius={'50%'}
                                     // sx={{clipPath: 'ellipse(40% 150px);'}}
-                                    sx={{clipPath: 'ellipse(50% 167px);'}}
-                                    boxShadow={'5px 5px 8px rgba(0,0,0,0.1), -5px -5px 8px rgba(0,0,0,0.1), inset 5px 5px 10px rgba(0,0,0,0.1), inset -5px -5px 10px rgba(0,0,0,0.1)'}>
-                                <Box w={'50%'} h={'50%'} boxShadow={'inset 5px 5px 10px rgba(0,0,0,0.1), inset -5px -5px 10px rgba(0,0,0,0.1)'} borderTopLeftRadius={'175px'} bg={`${this.handleColor('red')}`}></Box>
-                                <Box w={'50%'} h={'50%'} boxShadow={'inset 5px 5px 10px rgba(0,0,0,0.1), inset -5px -5px 10px rgba(0,0,0,0.1)'} borderTopRightRadius={'175px'} bg={`${this.handleColor('blue')}`}></Box>
-                                <Box w={'50%'} h={'50%'} boxShadow={'inset 5px 5px 10px rgba(0,0,0,0.1), inset -5px -5px 10px rgba(0,0,0,0.1)'} borderBottomLeftRadius={'175px'} bg={`${this.handleColor('green')}`}></Box>
-                                <Box w={'50%'} h={'50%'} boxShadow={'inset 5px 5px 10px rgba(0,0,0,0.1), inset -5px -5px 10px rgba(0,0,0,0.1)'} borderBottomRightRadius={'175px'} bg={`${this.handleColor('yellow')}`}></Box>
-                            </Flex>
+                                      sx={{clipPath: 'ellipse(50% 167px);'}}
+                                      boxShadow={'5px 5px 8px rgba(0,0,0,0.1), -5px -5px 8px rgba(0,0,0,0.1), inset 5px 5px 10px rgba(0,0,0,0.1), inset -5px -5px 10px rgba(0,0,0,0.1)'}>
+                                    <Box w={'50%'} h={'50%'}
+                                         boxShadow={'inset 5px 5px 10px rgba(0,0,0,0.1), inset -5px -5px 10px rgba(0,0,0,0.1)'}
+                                         borderTopLeftRadius={'175px'} bg={`${this.handleColor('red')}`}></Box>
+                                    <Box w={'50%'} h={'50%'}
+                                         boxShadow={'inset 5px 5px 10px rgba(0,0,0,0.1), inset -5px -5px 10px rgba(0,0,0,0.1)'}
+                                         borderTopRightRadius={'175px'} bg={`${this.handleColor('blue')}`}></Box>
+                                    <Box w={'50%'} h={'50%'}
+                                         boxShadow={'inset 5px 5px 10px rgba(0,0,0,0.1), inset -5px -5px 10px rgba(0,0,0,0.1)'}
+                                         borderBottomLeftRadius={'175px'} bg={`${this.handleColor('green')}`}></Box>
+                                    <Box w={'50%'} h={'50%'}
+                                         boxShadow={'inset 5px 5px 10px rgba(0,0,0,0.1), inset -5px -5px 10px rgba(0,0,0,0.1)'}
+                                         borderBottomRightRadius={'175px'} bg={`${this.handleColor('yellow')}`}></Box>
+                                </Flex>
                             </Center>
                     }
 
