@@ -2,29 +2,34 @@
 
 import styles from './page.module.css'
 import {Box, Button, Center, Container, Divider, Flex, Heading, RadioGroup, Stack} from "@chakra-ui/react";
-import {KSampler} from "@/components/ksampler/KSampler";
-import {GeneratedImage} from "@/components/ksampler/GeneratedImage";
-import {BaseShell} from "@/components/ksampler/BaseShell";
+
 import React, {useState} from "react";
-import {auto} from "@popperjs/core";
-import NavDrawer from "@/components/NavDrawer";
-import {FaAnglesLeft, FaAnglesRight} from "react-icons/fa6";
-import {PartMachineRelations} from "@/components/proj/PartMachineRelations";
-import MachineSelector from "@/components/proj/MachineSelector";
+import {UnoCard} from "@/components/UnoCard";
 
 export default function Home() {
 
 
 
     return (
-        <>
-            <NavDrawer></NavDrawer>
+
         <main className={styles.main}>
-            <Flex flexDir={'row'} justifyContent={'center'} w={'98%'} alignItems={'center'}>
-                <MachineSelector />
+            <Flex flexDir={'row'} justifyContent={'center'} w={'98%'} alignItems={'center'} flexWrap={'wrap'}>
+                <UnoCard num={1} color={'red'} />
+                <UnoCard num={2} color={'blue'} />
+                <UnoCard num={3} color={'green'} />
+                <UnoCard num={4} color={'yellow'} />
+                <UnoCard num={5} color={'red'} />
+                <UnoCard num={6} color={'blue'} />
+                <UnoCard num={7} color={'green'} />
+                <UnoCard num={8} color={'yellow'} />
+                <UnoCard color={'black'} action={'recolor'}/>
+                <UnoCard num={9} color={'black'}/>
+                <UnoCard num={9} color={'red'} />
+                <UnoCard num={9} color={'red'} />
+                <UnoCard num={9} color={'red'} />
             </Flex>
         </main>
-        </>
+
     );
 }
 
